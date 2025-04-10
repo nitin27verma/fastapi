@@ -12,19 +12,16 @@ pip install -r requirements.txt
 - to reproduce the lib setup
 
 ------------------Run Project--------------
-# Startup Command - uvicorn src.fast-api-app.main:app
-
-<<<<<<< HEAD
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.fast-api-app.main:app --bind 0.0.0.0:8000
-Startup Command: 
+# Startup Command - 
 python -m uvicorn src.fast-api-app.main:app --host 0.0.0.0 --port 8000
 
+Other Startup Command to try
+uvicorn src.fast-api-app.main:app
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.fast-api-app.main:app --bind 0.0.0.0:8000
 
 =======
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.webapp.main:app --bind 0.0.0.0:8000
 
->>>>>>> 61742ab6d7afc0469ecd7b889b404a3948cfff03
-uvicorn main:app --reload
+uvicorn src.fast-api-app.main:app --reload
 uvicorn server
 main refers to the main.py file.
 app refers to the FastAPI instance created in main.py
