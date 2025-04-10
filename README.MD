@@ -15,13 +15,16 @@ pip install -r requirements.txt
 ------------------Run Project--------------
 Startup Command - uvicorn src.fast-api-app.main:app
 
-# gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.webapp.main:app --bind 0.0.0.0:8000
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.fast-api-app.main:app --bind 0.0.0.0:8000
+Startup Command: 
+python -m uvicorn src.fast-api-app.main:app --host 0.0.0.0 --port 8000
 
-# uvicorn main:app --reload
-# uvicorn server
-# main refers to the main.py file.
-# app refers to the FastAPI instance created in main.py
-# --reload enables automatic reloading of the server when you make changes to your code
+
+uvicorn main:app --reload
+uvicorn server
+main refers to the main.py file.
+app refers to the FastAPI instance created in main.py
+--reload enables automatic reloading of the server when you make changes to your code
 
 Local:
 http://127.0.0.1:8000/
